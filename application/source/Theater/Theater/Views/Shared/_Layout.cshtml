@@ -11,11 +11,7 @@
     @Html.Partial("_NavBar")
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Theater Test Application. By Atiq Ahammed</p>
-            <p>Email: atiqahammed@yandex.com</p>
-        </footer>
+        @Html.Partial("_Footer")
     </div>
 
     @Scripts.Render("~/bundles/jquery")

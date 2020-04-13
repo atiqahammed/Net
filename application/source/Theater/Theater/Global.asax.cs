@@ -12,6 +12,7 @@ namespace Theater
     {
         protected void Application_Start()
         {
+            var loggedIn = true;
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
