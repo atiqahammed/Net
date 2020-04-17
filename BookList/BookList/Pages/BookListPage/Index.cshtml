@@ -1,0 +1,44 @@
+﻿@page
+@model BookList.Pages.BookListPage.IndexModel
+
+<div class="container row p-0 m-0">
+    <div class="col-10">
+        <h3 class="text-info">Book List</h3>
+    </div>
+    <div class="col-2">
+        <a asp-page="Create" class="btn btn-info form-control text-white">Add New Book</a>
+    </div>
+
+    <div class="col-12 p-3 mt-3">
+        <form method="post">
+            @if(Model.Books.Count() > 0)
+            {
+                <table class="table">
+                    <tr class="table-secondary">
+                        <th>
+                            <label asp-for="Books.FirstOrDefault().Name"></label>
+                        </th>
+                        <th>
+                            <label asp-for="Books.FirstOrDefault().Author"></label>
+                        </th>
+                    </tr>
+                    @foreach(var book in Model.Books)
+                    {
+                        <tr>
+                            <td>
+                                <a>@Html.DisplayFor(m => book.Name)</a>
+                            </td>
+                            <td>
+                                @Html.DisplayFor(m => book.Author)
+                            </td>
+                        </tr>
+                    }
+                </table>
+            } else
+            {
+                <p>No Book found.</p>
+            }
+        </form>
+    </div>
+</div>
+
