@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+
 
 namespace aspnetcoreapp
 {
@@ -21,9 +23,11 @@ namespace aspnetcoreapp
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
+        public void ConfigureServices(IServiceCollection services/*, ILogger<Startup> logger*/)
         {
+            //logger.LogInformation("Class : Startup -- Method : ConfigureServices $ Configuration service start.");
             services.AddRazorPages();
+            //logger.LogInformation("Class : Startup -- Method : ConfigureServices $ Configuration service end.");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

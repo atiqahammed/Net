@@ -20,6 +20,7 @@ namespace WebApplicationDotNetCore.Controllers
 
         public IActionResult Index()
         {
+            _logger.LogInformation("------------------// Render to to home index page \\\\------------------");
             return View();
         }
 
