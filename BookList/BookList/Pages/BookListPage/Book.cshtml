@@ -1,13 +1,28 @@
 ﻿@page
 @model BookList.Pages.BookListPage.CreateModel
-@{
-    ViewData["Title"] = "Create";
+
+@if (Model.Book != null)
+{
+    ViewData["Title"] = "Edit - Book";
+}
+else
+{
+    ViewData["Title"] = "Create - Book";
 }
 
-<h4>Create New Book</h4>
+@if (Model.Book != null)
+{
+    <h4>Create New Book</h4>
+}
+else
+{
+    <h4>Update Book</h4>
+}
+
 <br />
 <div class="container">
     <form method="post">
+        <input type="hidden" asp-for="Book.Id"/>
         <div class="text-danger" asp-validation-summary="ModelOnly"></div>
         <div class="form-group row">
             <div class="col-2">
@@ -41,7 +56,7 @@
 
         <div class="form-group row">
             <div class="col-2 offset-4">
-                <input type="submit" class="btn btn-dark form-control" value="Create" />
+                <input type="submit" class="btn btn-dark form-control" value="Save" />
             </div>
             <div class="col-2">
                 <a class="btn btn-dark form-control" asp-page="Index">Cancel</a>

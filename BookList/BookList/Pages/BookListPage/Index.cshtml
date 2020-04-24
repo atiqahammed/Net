@@ -10,7 +10,7 @@
         <h3 class="text-dark">Book List</h3>
     </div>
     <div class="col-2">
-        <a asp-page="Create" class="btn btn-dark form-control text-white">Add New Book</a>
+        <a asp-page="Book" class="btn btn-dark form-control text-white">Add New Book</a>
     </div>
 
     <div class="col-12 p-3 mt-3">
@@ -33,7 +33,7 @@
                     {
                         <tr>
                             <td>
-                                <a>@Html.DisplayFor(m => book.Name)</a>
+                                <a asp-page="Book" class="text-dark text-decoration-none font-weight-bold" asp-route-id="@book.Id">@Html.DisplayFor(m => book.Name)</a>
                             </td>
                             <td>
                                 @Html.DisplayFor(m => book.Author)
